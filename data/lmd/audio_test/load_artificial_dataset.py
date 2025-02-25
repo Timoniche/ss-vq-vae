@@ -15,7 +15,7 @@ TOTAL_FILES = 178561  # https://colinraffel.com/projects/lmd/
 # Decrease MAX_TICK value to avoid running out of RAM. Long files will be skipped
 pretty_midi.pretty_midi.MAX_TICK = 1e6
 
-
+# Run ../note_seq/prepare.ipynb and ../audio_train/prepare.ipynb first.
 def get_paths():
     for dirpath, _, filenames in os.walk(INPUT_DIR):
         for filename in filenames:
@@ -40,7 +40,7 @@ def process_file(path):
     return out_path, ns.total_time
 
 
-def prepare_dataset():
+def load_artificial_dataset():
     os.makedirs(OUTPUT_DIR)
     with cf.ProcessPoolExecutor(20) as pool:
         results = list(tqdm(
@@ -52,7 +52,7 @@ def prepare_dataset():
 
 
 def main():
-    prepare_dataset()
+    load_artificial_dataset()
 
 
 if __name__ == '__main__':
