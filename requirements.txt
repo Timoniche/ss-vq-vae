@@ -6,7 +6,7 @@ confugue==0.1.1
 essentia==2.1b6.dev1110
 librosa==0.10.1
 matplotlib==3.7.2
-# note-seq==0.0.1
+note_seq==0.0.5
 notebook==7.2.1
 numpy==1.24.3
 pandas==2.0.3
@@ -19,3 +19,6 @@ scipy==1.10.1
 SoundFile==0.12.1
 tensorflow==2.13.0
 torch==2.0.1
+
+setuptools~=68.2.0
+tqdm~=4.67.1
