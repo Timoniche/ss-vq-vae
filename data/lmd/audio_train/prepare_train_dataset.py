@@ -21,7 +21,8 @@ from note_seq.protobuf import music_pb2
 from sklearn.model_selection import train_test_split
 from tqdm.auto import tqdm
 
-INPUT_DIR = '/Users/ddulaev/PycharmProjects/ss-vq-kae/data/lmd/note_seq/olddata'
+# INPUT_DIR = '/Users/ddulaev/PycharmProjects/ss-vq-kae/data/lmd/note_seq/olddata'
+INPUT_DIR = '../note_seq/data'
 OUTPUT_DIR = 'wav_16kHz'
 TOTAL_FILES = 169556
 SR = 16000
@@ -37,7 +38,7 @@ SF_PATHS = {
         '../../soundfonts/Arachno SoundFont - Version 1.0.sf2'
     ],
     'test': [
-        '../../soundfonts/TimbresOfHeaven/Timbres Of Heaven (XGM) 3.94.sf2'
+        '../../soundfonts/TimbresOfHeaven/Timbres of Heaven (XGM) 4.00(G).sf2'
     ]
 }
 
