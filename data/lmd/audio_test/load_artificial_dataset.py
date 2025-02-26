@@ -8,7 +8,8 @@ import note_seq
 import pretty_midi
 from tqdm.auto import tqdm
 
-INPUT_DIR = '/Users/ddulaev/PycharmProjects/ss-vq-vae/lmd_full'
+# INPUT_DIR = '../note_seq/data/'
+INPUT_DIR = '/Users/ddulaev/PycharmProjects/ss-vq-kae/data/lmd/lmd_mini_full'
 OUTPUT_DIR = 'data'
 TOTAL_FILES = 178561  # https://colinraffel.com/projects/lmd/
 
@@ -30,7 +31,8 @@ def process_file(path):
         with warnings.catch_warnings():
             warnings.filterwarnings('ignore', r'Tempo, Key or Time signature change events found on non-zero tracks')
             ns = note_seq.midi_io.midi_file_to_note_sequence(path)
-    except note_seq.midi_io.MIDIConversionError:
+    except (note_seq.midi_io.MIDIConversionError, Exception) as e:
+        print(f"Skipping file {path} due to error: {e}")
         return None, 0
     out_path = os.path.splitext(path)[0] + f'.pickle'
     out_path = os.path.join(OUTPUT_DIR, os.path.relpath(out_path, INPUT_DIR))

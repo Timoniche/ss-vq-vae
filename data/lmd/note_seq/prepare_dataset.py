@@ -8,7 +8,7 @@ import note_seq
 import pretty_midi
 from tqdm.auto import tqdm
 
-INPUT_DIR = '../lmd_full/'
+INPUT_DIR = '../lmd_mini_full/'
 OUTPUT_DIR = 'data'
 TOTAL_FILES = 178561
 
